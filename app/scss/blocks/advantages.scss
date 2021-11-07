@@ -1,21 +1,34 @@
 $circleBg: rgb(54, 54, 54);
 .advantages {
-    padding-top: 75px;
-    padding-bottom: 75px;
-
+    
 }
 .advantages__title {
-    @include visually-hidden()
+    @include visually-hidden();
 }
 .advantages__list {
-    
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, auto));
     grid-column-gap: 30px;
+    padding-top: 75px;
+    padding-bottom: 75px;
 }
 .advantages__item {
-   
+    margin: 15px 0;
+    &:hover {
+        .advantages__img {
+            border-color: $second;
+        }
+        .advantages__svg {
+            fill: $second;
+        }
+        .advantages__subtitle {
+            color: $second;
+        }
+        .advantages__text {
+            color: $white;
+        }
+    }
 }
 .advantages__img {
     border-style: solid;
@@ -26,40 +39,54 @@ $circleBg: rgb(54, 54, 54);
     width: 104px;
     height: 104px;
     position: relative;
-
-  }
-  .advantages__svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      fill: $circleBg;
-      z-index: 10;
-  }
-  .advantages__subtitle {
+    transition-duration: 500ms;
+    transition-property: border-color;
+}
+.advantages__svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: $circleBg;
+    z-index: 10;
+    transition-duration: 500ms;
+    transition-property: fill;
+}
+.advantages__subtitle {
     font-size: 18px;
     font-family: "Raleway";
     color: rgb(99, 99, 99);
     font-weight: 800;
     text-transform: uppercase;
     line-height: 1.111;
-  }
-  .advantages__text {
-        font-size: 14px;
-        font-family: "Roboto";
-        color: rgb(85, 85, 85);
-        line-height: 1.429;
-
-        &::after {
-            content: "";
-            background-color: rgb(229, 73, 58);
-            width: 70px;
-            height: 2px;
-            display: block;
-            margin-top: 20px;
-
-            
-              
-        }
-      
-  }
+    transition-duration: 500ms;
+    transition-property: color;
+}
+.advantages__text {
+    font-size: 14px;
+    font-family: "Roboto";
+    color: rgb(85, 85, 85);
+    line-height: 1.429;
+    transition-duration: 500ms;
+    transition-property: color;
+    &::after {
+        content: "";
+        background-color: rgb(229, 73, 58);
+        width: 70px;
+        height: 2px;
+        display: block;
+        margin-top: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .advantages__list {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    .advantages__item {
+        text-align: center;
+    }
+    .advantages__img {
+        margin: 0 auto;
+    }
+} 
