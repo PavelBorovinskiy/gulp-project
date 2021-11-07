@@ -1,0 +1,40 @@
+$bg: #202020;
+
+.works {
+    background-color: $bg;
+}
+.works__title-hide {
+    @include visually-hidden();
+}
+
+.works__list {
+    padding-top: 80px;
+    padding-bottom: 160px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(60px, auto));
+    grid-auto-rows: minmax(270px, auto);
+}
+.works__element--three {
+    grid-column: span 3;
+}
+.works__element--four {
+    grid-column: span 4;
+}
+.works__element--five {
+    grid-column: span 5;
+}
+.works__element--six {
+    grid-column: span 6;
+}
+
+.works__title {
+    font-size: 30px;
+    font-family: "Raleway";
+    color: $white;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+
+  }
+  
