@@ -1,10 +1,9 @@
 $circleBg: rgb(54, 54, 54);
-.advantages {
-    
-}
+
 .advantages__title {
     @include visually-hidden();
 }
+
 .advantages__list {
     list-style: none;
     display: grid;
@@ -13,6 +12,7 @@ $circleBg: rgb(54, 54, 54);
     padding-top: 75px;
     padding-bottom: 75px;
 }
+
 .advantages__item {
     margin: 15px 0;
     &:hover {
@@ -30,6 +30,7 @@ $circleBg: rgb(54, 54, 54);
         }
     }
 }
+
 .advantages__img {
     border-style: solid;
     border-width: 1px;
@@ -42,6 +43,7 @@ $circleBg: rgb(54, 54, 54);
     transition-duration: 500ms;
     transition-property: border-color;
 }
+
 .advantages__svg {
     position: absolute;
     top: 50%;
@@ -52,6 +54,7 @@ $circleBg: rgb(54, 54, 54);
     transition-duration: 500ms;
     transition-property: fill;
 }
+
 .advantages__subtitle {
     font-size: 18px;
     font-family: "Raleway";
@@ -89,4 +92,4 @@ $circleBg: rgb(54, 54, 54);
     .advantages__img {
         margin: 0 auto;
     }
-} 
+}
