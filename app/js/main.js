@@ -1,4 +1,4 @@
-$(document).ready(function(){
+jQuery(function () {
 
     $(".works__btns button, .works__btns a").on("focus", function (e) {
         $(this).parents(".works__element").addClass("works__element--active")
@@ -7,7 +7,29 @@ $(document).ready(function(){
         $(this).parents(".works__element").removeClass("works__element--active")
     });
 
+    function moveProgressBar(node, nodeLine, tooltip, animationLenght = 1500) {
+        const progressElement = $(node);
+        progressElement.each(function (value, item) {
+            $(item).find(nodeLine).animate({
+                width: item.dataset.progressPercent + '%'
+            }, animationLenght);
+            $(item).find(tooltip).show(animationLenght);
+        })
+    }
+
+
+    let animate = true;
+
+    $(window).scroll(function () {
+
+        if ($('.skills').offset().top <= $(window).scrollTop() + 300) {
+            if (animate) {
+                moveProgressBar('.progress__element', '.progress__line', '.progress__tooltip')
+            }
+            animate = false;
+        }
+    });
 });
 
 
-  
+
